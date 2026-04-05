@@ -7,14 +7,21 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("App for measures converting.");
+        System.out.println("Version 1.0");
 
 
-        double kgs = 5;
-        double pounds = convKgsToPounds(kgs);
-        System.out.println("Result is " + pounds + " pounds.");
+        double kgsInitial = 5;
+        double poundsInitial = 12;
+        double pounds = convKgsToPounds(kgsInitial);
+        double kgs = convPoundsToKgs(poundsInitial);
+        System.out.println("Result is " + pounds + " pounds and " + kgs + " kgs.");
     }
 
-    private static double convKgsToPounds(double kgs) {
-        return kgs * CONV_K;
+    private static double convKgsToPounds(double kgsInitial) {
+        return kgsInitial * CONV_K;
+    }
+
+    private static double convPoundsToKgs(double poundsInitial) {
+        return poundsInitial / CONV_K;
     }
 }
